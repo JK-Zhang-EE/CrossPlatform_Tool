@@ -1,2 +1,0 @@
-/Library/Developer/CommandLineTools/usr/bin/ar qc libMyTool.a CMakeFiles/MyTool.dir/src/math/MyMath.cpp.o
-/Library/Developer/CommandLineTools/usr/bin/ranlib libMyTool.a
