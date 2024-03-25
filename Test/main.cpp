@@ -1,14 +1,11 @@
-#include <stdlib.h>
 #include <iostream>
 
-#include "MyMath.h"
+#include "MyTool.h"
 
-int main() {
-
-    MyTool::MyMath m = MyTool::MyMath(); 
-
-    printf("%s\n", m.version);
-    printf("%d\n", m.add(5, 7));
-    printf("%d\n", m.sub(5, 7));
-
+int main() 
+{
+    printf("=== Start Testing ===\n");
+    printf("%s\n", MyTool::version.c_str());
+    printf("%d\n", MyTool::getMathAddResult(5, 7));
+    printf("%d\n", MyTool::getMathSubResult(5, 7));
 }

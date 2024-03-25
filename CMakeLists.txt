@@ -1,8 +1,10 @@
-cmake_minimum_required(VERSION 3.28.3 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.28.3)
 
 # Project Name
 project(MyTool)
 set(CMAKE_BUILD_TYPE Release)
+
+set(MYTOOL_LIB MyTool)
 
 # Defined Path
 set(SOURCE_DIR ${CMAKE_SOURCE_DIR}/src)
@@ -14,9 +16,7 @@ include_directories(
     ${CMAKE_SOURCE_DIR}/include/math
 )
 
-#file(GLOB_RECURSE MYLIB RELATIVE ${CMAKE_SOURCE_DIR} src/MyMath.cpp include/MyMath.h)
+# Create lib
+add_library(MyTool STATIC ${SOURCE_DIR}/MyTool.cpp)
 
-# Create shared lib
-add_library(${PROJECT_NAME} STATIC ${SOURCE_DIR}/math/MyMath.cpp)
-
-
+add_subdirectory(Test)
