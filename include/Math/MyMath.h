@@ -1,8 +1,16 @@
 #include <iostream>
 
+#ifndef DLL_EXPORTS
+#ifdef _WIN32
+    #define DLL_EXPORTS __declspec(dllexport)
+#else
+    #define DLL_EXPORTS __attribute__((visibility("default")))
+#endif
+#endif
+
 namespace MyTool
 {
-    class MyMath
+    class DLL_EXPORTS MyMath
     {
     public:
 
