@@ -1,4 +1,5 @@
 #include <MyTool.h>
+#include <MyMath.h>
 
 namespace MyTool
 {
