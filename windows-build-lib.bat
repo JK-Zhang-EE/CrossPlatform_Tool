@@ -15,6 +15,6 @@ md %BIN%
 cmake -G "Visual Studio 17 2022" -A x64 -S . -B %OUTPUT%
 cmake --build %OUTPUT% --target ALl_BUILD --config Release
 
-echo D | xcopy %DLL_FILE% %EXAMPLE_ROOT%\lib /q/s/i/y
-echo D | xcopy %LIB_FILE% %EXAMPLE_ROOT%\lib /q/s/i/y
-echo D | xcopy %HEADER% %EXAMPLE_ROOT%\include /q/s/i/y
+xcopy %DLL_FILE% %EXAMPLE_ROOT%\lib /q/s/i/y
+xcopy %LIB_FILE% %EXAMPLE_ROOT%\lib /q/s/i/y
+xcopy %HEADER% %EXAMPLE_ROOT%\include /q/s/i/y

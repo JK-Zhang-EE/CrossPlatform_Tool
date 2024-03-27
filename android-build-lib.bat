@@ -4,11 +4,15 @@ setlocal ENABLEDELAYEDEXPANSION
 set OUTPUT=build
 set ABI=(arm64-v8a armeabi-v7a x86)
 set ANDROID_NDK_HOME="C:\android-ndk-r18b"
-set ANDROID_NDK_PREBUILT=windows-x86_64
+set ANDROID_NDK_PREBUILT=windows-x86_64 
+set TEST_ANDROID_ROOT=test\android\app\src\main
 
 if not exist %ANDROID_NDK_HOME% (
 	echo Need Android NDK
 )
+
+rmdir %TEST_ANDROID_ROOT%\jniLibs /s/q 
+mkdir %TEST_ANDROID_ROOT%\jniLibs
 
 rmdir %OUTPUT% /q/s
 
@@ -33,4 +37,12 @@ for %%i in %ABI% do (
 		-DANDROID_ABI=%%i
 		
 	cmake --build ./!BUILD! --clean-first --config Release --target all
+
+	mkdir %TEST_ANDROID_ROOT%\jniLibs\%%i
+
+	copy %OUTPUT%\%%i\lib\*.so %TEST_ANDROID_ROOT%\jniLibs\%%i /y
 )
+
+copy include\android\*.java %TEST_ANDROID_ROOT%\java\com /y
+
+
