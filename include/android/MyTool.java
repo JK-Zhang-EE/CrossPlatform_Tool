@@ -1,9 +1,14 @@
 package com;
 
 public class MyTool {
-    public native static String version();
 
-    public native static int getMathAddResult(int x, int y);
+    static {
+        System.loadLibrary("MyTool");
+    }
 
-    public native static int getMathSubResult(int x, int y);
+    public static native String version();
+
+    public static native int getMathAddResult(int x, int y);
+
+    public static native int getMathSubResult(int x, int y);
 }
