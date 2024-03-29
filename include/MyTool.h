@@ -10,7 +10,8 @@
 
 namespace MyTool
 {
-    static const std::string version = "1.0.0";
+
+    const std::string version = "1.0.0";
 
     int DLL_EXPORTS getMathAddResult(int x, int y);
 

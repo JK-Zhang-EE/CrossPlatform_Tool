@@ -12,24 +12,10 @@ set(INCLUDE_DIR ${CMAKE_SOURCE_DIR}/include)
 
 # === Setting Project Information
 ## Project Name
-project(MyTool)
+project(MyToolLibrary)
 
-if (WIN32)
-    set(MYTOOL_LIB MyTool.lib)
-
-elseif (ANDROID)
-    include_directories(
-        ${INCLUDE_DIR}/android
-    )
-
-    set(MYTOOL_LIB -lMyTool)
-
-elseif (IOS)
-    #echo IOS
-endif()
-
-## Include directories (.h)
 include_directories(
+    ${CMAKE_SOURCE_DIR}
     ${INCLUDE_DIR}
     ${INCLUDE_DIR}/math
 )
@@ -38,11 +24,56 @@ link_directories(
     ${CMAKE_BINARY_DIR}/lib
 )
 
+if (IOS)
+    include_directories(
+        ${INCLUDE_DIR}/ios
+    )
+else()
+    if (ANDROID)
+        set(MYTOOL_LIB -lMyTool)
+        include_directories(
+            ${INCLUDE_DIR}/android
+        )
+    elseif(WIN32)
+        set(MYTOOL_LIB MyTool.lib)
+    endif()
+    
+    include_directories(
+        ${INCLUDE_DIR}
+    )
+endif()
+
 set(MYTOOL_SOURCES ${SOURCE_DIR}/MyTool.cpp ${SOURCE_DIR}/math/MyMath.cpp)
 
-if (ANDROID)
-    set(MYTOOL_SOURCES ${MYTOOL_SOURCES} ${SOURCE_DIR}/android/MyToolJNI.cpp)
+if (IOS)
+    set(MYTOOL_SOURCES ${MYTOOL_SOURCES} ${INCLUDE_DIR}/MyTool.h ${INCLUDE_DIR}/math/MyMath.h)
+    set(MYTOOL_SOURCES ${MYTOOL_SOURCES} ${SOURCE_DIR}/ios/MyToolLibrary.mm ${INCLUDE_DIR}/ios/MyToolLibrary.h)
+else()
+    if (ANDROID)
+        set(MYTOOL_SOURCES ${MYTOOL_SOURCES} ${SOURCE_DIR}/android/MyToolJNI.cpp)
+    endif()
 endif()
 
 ## Add source to lib
-add_library(MyTool SHARED ${MYTOOL_SOURCES})
+if (IOS)
+    add_library(
+        MyToolLibrary 
+        STATIC 
+        ${MYTOOL_SOURCES}
+    )
+
+    set_target_properties(
+        MyToolLibrary
+        PROPERTIES
+        FRAMEWORK TRUE
+        FRAMEWORK_VERSION A
+        PUBLIC_HEADER "include/ios/MyToolLibrary.h"
+        XCODE_ATTRIBUTE_DEFINES_MODULE YES
+        XCODE_ATTRIBUTE_CODE_SIGN_REQUIRED NO
+    )
+
+    set(CMAKE_FIND_FRAMEWORK ONLY)
+
+else()
+    add_library(MyTool SHARED ${MYTOOL_SOURCES})
+endif()
