@@ -7,17 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A67B6182BB65E440048FACD /* MyToolLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A67B6172BB65E440048FACD /* MyToolLibrary.framework */; };
 		2A71BA352BB5168B00FE9D54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A71BA342BB5168B00FE9D54 /* AppDelegate.swift */; };
 		2A71BA372BB5168B00FE9D54 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A71BA362BB5168B00FE9D54 /* SceneDelegate.swift */; };
 		2A71BA392BB5168B00FE9D54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A71BA382BB5168B00FE9D54 /* ViewController.swift */; };
 		2A71BA3C2BB5168B00FE9D54 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 2A71BA3B2BB5168B00FE9D54 /* Base */; };
 		2A71BA3E2BB5168C00FE9D54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A71BA3D2BB5168C00FE9D54 /* Assets.xcassets */; };
 		2A71BA412BB5168C00FE9D54 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 2A71BA402BB5168C00FE9D54 /* Base */; };
+		2A8C4C2C2BBA661F00777766 /* MyToolLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8C4C2B2BBA661F00777766 /* MyToolLibrary.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2A67B6172BB65E440048FACD /* MyToolLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MyToolLibrary.framework; path = lib/MyToolLibrary.framework; sourceTree = "<group>"; };
 		2A71BA312BB5168B00FE9D54 /* test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A71BA342BB5168B00FE9D54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A71BA362BB5168B00FE9D54 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +25,7 @@
 		2A71BA3D2BB5168C00FE9D54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A71BA402BB5168C00FE9D54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2A71BA422BB5168C00FE9D54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A8C4C2B2BBA661F00777766 /* MyToolLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MyToolLibrary.framework; path = lib/MyToolLibrary.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,7 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A67B6182BB65E440048FACD /* MyToolLibrary.framework in Frameworks */,
+				2A8C4C2C2BBA661F00777766 /* MyToolLibrary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +59,7 @@
 		2A71BA332BB5168B00FE9D54 /* test */ = {
 			isa = PBXGroup;
 			children = (
-				2A67B6172BB65E440048FACD /* MyToolLibrary.framework */,
+				2A8C4C2B2BBA661F00777766 /* MyToolLibrary.framework */,
 				2A71BA342BB5168B00FE9D54 /* AppDelegate.swift */,
 				2A71BA362BB5168B00FE9D54 /* SceneDelegate.swift */,
 				2A71BA382BB5168B00FE9D54 /* ViewController.swift */,

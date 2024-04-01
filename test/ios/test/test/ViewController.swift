@@ -20,9 +20,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
                 
         
-        //test_Label.text = "version: " + myTool.getVersion() + "/n";
-                          //"5+7= " + String(myTool.getMathAddResult(5, y: 7)) + "/n" +
-                          //"5-7= " + String(myTool.getMathSubResult(5, y: 7));
+        //test_Label.text = "5+7= " + String(my_tool.getMathAddResult(5, y: 7)) + "/n" + "5-7= " + String(my_tool.getMathSubResult(5, y: 7));
         
     }
 

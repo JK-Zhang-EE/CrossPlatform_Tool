@@ -1,7 +1,9 @@
+// MyToolLibrary.h
+
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface MyToolObjC : NSObject
+@interface MyToolLibrary : NSObject
 
 - (NSString*)version;
 

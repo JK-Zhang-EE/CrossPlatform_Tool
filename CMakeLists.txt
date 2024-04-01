@@ -1,10 +1,16 @@
-cmake_minimum_required(VERSION 3.25.1)
+cmake_minimum_required(VERSION 3.10)
 
-## Set project output path
+## Set environment
 set(CMAKE_BUILD_TYPE Release)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+
+set(CMAKE_CONFIGURATION_TYPES Release)
+set(CMAKE_CXX_STANDARD 11)
+
+#set(CMAKE_CXX_VISIBILITY_PRESET hidden)
+#set(CMAKE_VISIBILITY_INLINES_HIDDEN YES)
 
 ## Setting directories path
 set(SOURCE_DIR ${CMAKE_SOURCE_DIR}/src)
@@ -26,8 +32,19 @@ link_directories(
 
 if (IOS)
     include_directories(
+        ./
         ${INCLUDE_DIR}/ios
     )
+
+    include(CheckTypeSize)
+    check_type_size(time_t SIZEOF_TIME_T)
+
+    include(CheckCXXSymbolExists)
+
+    check_cxx_symbol_exists(kqueue sys/event.h HAVE_KQUEUE)
+
+    find_library(COREGRAPHICS_LIB CoreGraphics)
+
 else()
     if (ANDROID)
         set(MYTOOL_LIB -lMyTool)
@@ -56,6 +73,7 @@ endif()
 
 ## Add source to lib
 if (IOS)
+
     add_library(
         MyToolLibrary 
         STATIC 
@@ -69,6 +87,7 @@ if (IOS)
         FRAMEWORK_VERSION A
         PUBLIC_HEADER "include/ios/MyToolLibrary.h"
         XCODE_ATTRIBUTE_DEFINES_MODULE YES
+        XCODE_ATTRIBUTE_CLANG_ENABLE_OBJC_ARC YES
         XCODE_ATTRIBUTE_CODE_SIGN_REQUIRED NO
     )
 

@@ -1,9 +1,11 @@
+// MyToolLibrary.h
+
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
 @interface MyToolLibrary : NSObject
 
-//- (NSString*)version;
+- (NSString*)version;
 
 - (int)getMathAddResult:(int)x y:(int)y;
 

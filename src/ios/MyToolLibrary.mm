@@ -1,17 +1,18 @@
-#import <MyTool.h>
-#import <MyToolObjC.h>
-#import <stdlib.h>
-#import <stdio.h>
-#import <string>
-#import <fstream>
-#import <Foundation/Foundation.h>
+// MyToolLibrary.mm
 
-@interface MyToolObjC(){
+#import <stdio.h>
+#import <stdlib.h>
+#import <string>
+
+#import <MyTool.h>
+#import <MyToolLibrary.h>
+
+@interface MyToolLibrary(){
     
 }
 @end
 
-@implementation MyToolObjC
+@implementation MyToolLibrary
 
 - (id) init {
     self = [super init];
