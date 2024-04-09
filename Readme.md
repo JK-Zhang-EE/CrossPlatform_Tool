@@ -16,3 +16,8 @@ This project will demonstrate how to build the cross platform library from c++ s
 ![image info](./img/android.jpg)
 
 ## iOS
+1. Execute the `ios-build-lib.bat` file to make android .framework library.
+2. The output will copy to `./test/ios/test/test` and  `./test/androd/app/src/main/java/com`.
+3. Use `Android Studio` to execute the `./test/android/build.gradle` to make a android application.
+4. The execute result:  
+![image info](./img/ios.png)
