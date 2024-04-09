@@ -1,13 +1,5 @@
 #include <MyTool.h>
 #include <jni.h>
-#include <string>
-
-extern "C"
-JNIEXPORT jstring JNICALL 
-Java_com_MyTool_version(JNIEnv *env, jobject  obj)
-{
-    return env->NewStringUTF(MyTool::version.c_str());
-}
 
 extern "C"
 JNIEXPORT jint JNICALL 

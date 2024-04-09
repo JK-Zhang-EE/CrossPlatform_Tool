@@ -6,8 +6,6 @@ public class MyTool {
         System.loadLibrary("MyTool");
     }
 
-    public static native String version();
-
     public static native int getMathAddResult(int x, int y);
 
     public static native int getMathSubResult(int x, int y);

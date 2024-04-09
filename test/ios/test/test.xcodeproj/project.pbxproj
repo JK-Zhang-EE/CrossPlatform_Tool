@@ -13,7 +13,7 @@
 		2A71BA3C2BB5168B00FE9D54 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 2A71BA3B2BB5168B00FE9D54 /* Base */; };
 		2A71BA3E2BB5168C00FE9D54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A71BA3D2BB5168C00FE9D54 /* Assets.xcassets */; };
 		2A71BA412BB5168C00FE9D54 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 2A71BA402BB5168C00FE9D54 /* Base */; };
-		2A8C4C2C2BBA661F00777766 /* MyToolLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8C4C2B2BBA661F00777766 /* MyToolLibrary.framework */; };
+		2A8C4C352BBBAB9100777766 /* MyToolLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8C4C322BBAB94700777766 /* MyToolLibrary.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 		2A71BA3D2BB5168C00FE9D54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A71BA402BB5168C00FE9D54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2A71BA422BB5168C00FE9D54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2A8C4C2B2BBA661F00777766 /* MyToolLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MyToolLibrary.framework; path = lib/MyToolLibrary.framework; sourceTree = "<group>"; };
+		2A8C4C322BBAB94700777766 /* MyToolLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MyToolLibrary.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,7 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A8C4C2C2BBA661F00777766 /* MyToolLibrary.framework in Frameworks */,
+				2A8C4C352BBBAB9100777766 /* MyToolLibrary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +59,7 @@
 		2A71BA332BB5168B00FE9D54 /* test */ = {
 			isa = PBXGroup;
 			children = (
-				2A8C4C2B2BBA661F00777766 /* MyToolLibrary.framework */,
+				2A8C4C332BBAB94700777766 /* lib */,
 				2A71BA342BB5168B00FE9D54 /* AppDelegate.swift */,
 				2A71BA362BB5168B00FE9D54 /* SceneDelegate.swift */,
 				2A71BA382BB5168B00FE9D54 /* ViewController.swift */,
@@ -69,6 +69,14 @@
 				2A71BA422BB5168C00FE9D54 /* Info.plist */,
 			);
 			path = test;
+			sourceTree = "<group>";
+		};
+		2A8C4C332BBAB94700777766 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				2A8C4C322BBAB94700777766 /* MyToolLibrary.framework */,
+			);
+			path = lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,6 +335,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = T46NUSF469;

@@ -26,11 +26,6 @@
     
 }
 
-- (NSString*)version
-{
-    return [NSString stringWithCString:MyTool::version.c_str() encoding:[NSString defaultCStringEncoding]];
-}
-
 - (int)getMathAddResult:(int)x y:(int)y
 {
     return MyTool::getMathAddResult(x, y);

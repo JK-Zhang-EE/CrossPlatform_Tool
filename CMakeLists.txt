@@ -9,9 +9,6 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_CONFIGURATION_TYPES Release)
 set(CMAKE_CXX_STANDARD 11)
 
-#set(CMAKE_CXX_VISIBILITY_PRESET hidden)
-#set(CMAKE_VISIBILITY_INLINES_HIDDEN YES)
-
 ## Setting directories path
 set(SOURCE_DIR ${CMAKE_SOURCE_DIR}/src)
 set(INCLUDE_DIR ${CMAKE_SOURCE_DIR}/include)
@@ -35,15 +32,6 @@ if (IOS)
         ./
         ${INCLUDE_DIR}/ios
     )
-
-    include(CheckTypeSize)
-    check_type_size(time_t SIZEOF_TIME_T)
-
-    include(CheckCXXSymbolExists)
-
-    check_cxx_symbol_exists(kqueue sys/event.h HAVE_KQUEUE)
-
-    find_library(COREGRAPHICS_LIB CoreGraphics)
 
 else()
     if (ANDROID)
@@ -90,8 +78,6 @@ if (IOS)
         XCODE_ATTRIBUTE_CLANG_ENABLE_OBJC_ARC YES
         XCODE_ATTRIBUTE_CODE_SIGN_REQUIRED NO
     )
-
-    set(CMAKE_FIND_FRAMEWORK ONLY)
 
 else()
     add_library(MyTool SHARED ${MYTOOL_SOURCES})

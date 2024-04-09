@@ -17,8 +17,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         textView = findViewById(R.id.textView_Label_1);
-        String str = "version:" + MyTool.version() + "\n" +
-                     "5+7=" + MyTool.getMathAddResult(5,7) + "\n" +
+        String str = "5+7=" + MyTool.getMathAddResult(5,7) + "\n" +
                      "5-7=" + MyTool.getMathSubResult(5, 7 );
         textView.setText(str);
 
