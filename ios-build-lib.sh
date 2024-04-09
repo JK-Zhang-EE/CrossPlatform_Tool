@@ -5,7 +5,6 @@ XCODE_ROOT="/Applications/Xcode.app/Contents/Developer"
 rm -rf $OUTPUT
 mkdir $OUTPUT
 
-
 cmake -G Xcode -DCMAKE_TOOLCHAIN_FILE=../ios.toolchain.cmake -DPLATFORM=OS64 -S  . -B $OUTPUT
 cmake --build $OUTPUT --config Release
 
